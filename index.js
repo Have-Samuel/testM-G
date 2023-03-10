@@ -7,21 +7,25 @@ const canvas = document.querySelector('#meme');
 let image;
 
 const updateMemeCanvas = (canvas, image, topText, bottomText) => {
-  console.log(canvas);
-  console.log(image);
-  console.log(topText);
-  console.log(bottomText);
+  const ctx = canvas.getContext('2d');
+  const width = image.width;
+  const height = image.height;
+
+  // Update canvas background
+  canvas.width = width;
+  canvas.height = height;
+  ctx.drawImage(image, 0, 0);
 };
 
 imageUrlInput.addEventListener('change', () => {
-  const imageDataUrl = URL.createObjectURL(imageUrlInput[0]);
+  const imageDataUrl = URL.createObjectURL(imageUrlInput.files[0]);
 
   image = new Image();
   image.src = imageDataUrl;
 
   image.addEventListener('load', () => {
     updateMemeCanvas(canvas, image, topTextInput.value, bottomTextInput.value);
-  });
+  }, { once: true });
 });
 
 form.addEventListener('submit', (e) => {
