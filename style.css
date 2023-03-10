@@ -39,4 +39,19 @@ body {
   color: #333;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
+  outline: none;
+}
+
+.meme-generator button {
+  padding: 1rem;
+  border: none;
+  color: antiquewhite;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: slateblue;
+  border-radius: 10px;
+  margin-left: 72rem;
+  margin-top: 1rem;
+  cursor: pointer;
 }
