@@ -8,8 +8,8 @@ let image;
 
 const updateMemeCanvas = (canvas, image, topText, bottomText) => {
   const ctx = canvas.getContext('2d');
-  const width = image.width;
-  const height = image.height;
+  const { width } = image.width;
+  const { height } = image.height;
   const yOffset = height / 25;
   const fontSize = Math.floor(height / 10);
 
